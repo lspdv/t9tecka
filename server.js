@@ -19,14 +19,13 @@ router.post('/t9ka', (req, res) => {
   const convertedNumbers = getNumbersToWord(numbersToConvert);
   const words = searchForWords(convertedNumbers);
 
-  console.log("frontend", convertedNumbers);
   res.json(convertedNumbers);
-  res.status(200).send('OK')
+  res.status(200).send('OK');
 });
 
 function searchForWords(convertedNumbers = []) {
   const dictionary = [];
-  const file = fs.readFileSync('./words.txt', 'utf8').split('\n');
+  const file = fs.readFileSync('./dictionary.txt', 'utf8').split('\n');
 
   file.forEach(line => {
     convertedNumbers.forEach(digit => {
@@ -61,6 +60,7 @@ function getNumbersToWord(number) {
     const digits = digitsWord.split('');
     const arraysToCombine = [];
 
+    //function match set from multiple sets of arrays
     function cartesianProduct(arr) {
       return arr.reduce(
         function(a, b) {
@@ -83,11 +83,8 @@ function getNumbersToWord(number) {
     });
 
     const arrayOfConverted = cartesianProduct(arraysToCombine);
-    console.log(arrayOfConverted, 'converted');
-    console.log(digitsWord, 'digitsWord')
 
-    return convertedNumbers.push(arrayOfConverted)
-    
+    return convertedNumbers.push(arrayOfConverted);
   }
-  return convertedNumbers
+  return convertedNumbers;
 }
