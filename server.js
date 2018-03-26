@@ -16,11 +16,78 @@ app.use('/api', router);
 
 router.post('/t9ka', (req, res) => {
   const numbersToConvert = req.body.numbers;
+  const convertedNumbers = getNumbersToWord(numbersToConvert);
+  const words = searchForWords(convertedNumbers);
 
-  const words = ['word1', 'word2'];
-  
-    console.log("result server.js", words);
-  
-    res.json(words);
-    res.status(200).send('OK')
+  console.log("frontend", convertedNumbers);
+  res.json(convertedNumbers);
+  res.status(200).send('OK')
+});
+
+function searchForWords(convertedNumbers = []) {
+  const dictionary = [];
+  const file = fs.readFileSync('./words.txt', 'utf8').split('\n');
+
+  file.forEach(line => {
+    convertedNumbers.forEach(digit => {
+      if (digit === line) {
+        dictionary.push(line);
+      }
+    });
+  });
+
+  return dictionary;
+}
+
+function getNumbersToWord(number) {
+  const convertedNumbers = [];
+
+  numberToLetter(number);
+
+  function numberToLetter(digitsWord) {
+    const veryOldMobileKeyboard = {
+      '0': ['+'],
+      '1': ['.', ',', '?', '!'],
+      '2': ['a', 'b', 'c'],
+      '3': ['d', 'e', 'f'],
+      '4': ['g', 'h', 'i'],
+      '5': ['j', 'k', 'l'],
+      '6': ['m', 'n', 'o'],
+      '7': ['p', 'q', 'r', 's'],
+      '8': ['t', 'u', 'v'],
+      '9': ['w', 'x', 'y', 'z']
+    };
+
+    const digits = digitsWord.split('');
+    const arraysToCombine = [];
+
+    function cartesianProduct(arr) {
+      return arr.reduce(
+        function(a, b) {
+          return a
+            .map(function(x) {
+              return b.map(function(y) {
+                return x.concat(y);
+              });
+            })
+            .reduce(function(a, b) {
+              return a.concat(b);
+            }, []);
+        },
+        [[]]
+      );
+    }
+
+    digits.forEach(digit => {
+      arraysToCombine.push(veryOldMobileKeyboard[digit]);
+    });
+
+    const arrayOfConverted = cartesianProduct(arraysToCombine);
+    console.log(arrayOfConverted, 'converted');
+    console.log(digitsWord, 'digitsWord')
+
+    return convertedNumbers.push(arrayOfConverted)
+    
+  }
+  return convertedNumbers
 }
