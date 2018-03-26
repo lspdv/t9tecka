@@ -2,7 +2,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 This project contains T9 convertor as we all (or the older of us) know very well and compares choosen digits with words in english dictionary. Dictionary contains just limited number of words. 
 
-For server I use express and part of the script contains the function for matching pairs of letters (which we could call similar to Cartesian Product mathematic operation). Those matches will be compared with the dictionary...hopefully...somehow....anyay, this README is TBD soon.
+For server I use express and part of the script contains the function for matching pairs of letters (which we could call similar to Cartesian Product mathematic operation). Those matches will be compared with the dictionary...hopefully...somehow....anyway, this README is TBD soon.
 
 In the project directory, you can run:
 
