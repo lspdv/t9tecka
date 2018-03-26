@@ -1,17 +1,57 @@
+/* TEXT MIXINS */
+/* TEXT PLACEHOLDERS */
+h3 {
+  font-family: "courier-prime", Courier, sans-serif;
+  font-weight: 700; }
+
+h1, h2 {
+  font-family: "futura-pt", Futura, sans-serif;
+  font-weight: 700; }
+
+* {
+  box-sizing: border-box; }
+
+body {
+  display: block;
+  overflow-x: hidden;
+  position: relative; }
+
+body, html {
+  background-color: #69abfb;
+  color: #434343;
+  font-family: "courier-prime", Courier, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 25px;
+  margin: 0;
+  text-align: left;
+  width: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+
+a {
+  color: #434343;
+  font-weight: 700;
+  text-decoration: underline;
+  transition: color 60ms ease; }
+  a:hover {
+    color: #968975;
+    cursor: pointer; }
+
+  h1, h2 {
+    color: #434343; }
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
 .App-header {
   background-color: #222;
-  height: 150px;
-  padding: 20px;
+  height: 160px;
+  padding: 10px;
   color: white;
+  overflow: hidden;
 }
 
 .App-title {
@@ -22,7 +62,16 @@
   font-size: large;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.no-spinners {
+  -moz-appearance:textfield;
 }
+
+// Disable arrows in number input
+.no-spinners::-webkit-outer-spin-button,
+.no-spinners::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+

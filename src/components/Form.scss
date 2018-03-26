@@ -1,0 +1,176 @@
+.phone {
+  background-color: #444444;
+  border-color: #3a3b3a #313231 #282828;
+  padding: 0;
+  background-size: 100% auto;
+  border-radius: 6.6vw;
+  box-shadow: 0 1vw 0 0 #3c70ad;
+  display: block;
+  padding: 5px 5px 24px;
+  position: relative;
+}
+
+.phone:before {
+  content: '';
+  display: block;
+  margin: 0;
+  padding: 156% 0 0;
+}
+.phone,
+.phone .screen {
+  border-style: solid;
+  border-width: 4px;
+}
+
+.phone .bar {
+  background: #b5afa8;
+  display: block;
+  padding: 6% 13%;
+  width: 100%;
+}
+.phone .buttons,
+.phone .camera,
+.phone .home-button,
+.phone .jack,
+.phone .screen,
+.phone .speaker {
+  display: block;
+  position: absolute;
+}
+.phone .buttons {
+  height: 30%;
+  left: 100%;
+  top: 11%;
+  transform: translateX(4px);
+  width: 8%;
+}
+.phone .buttons:after,
+.phone .buttons:before {
+  background: #3a3b3a;
+  border-radius: 0 5px 5px 0;
+  content: '';
+  display: block;
+  height: 0;
+  left: -1px;
+  margin-bottom: 18%;
+  padding-top: 192%;
+  position: relative;
+  width: 5px;
+}
+.phone .camera,
+.phone .jack,
+.phone .speaker,
+.phone .home-button {
+  transform: translateX(-50%) translateY(-50%);
+}
+.phone .camera,
+.phone .speaker {
+  top: 6%;
+}
+.phone .camera {
+  background: #303030;
+  border-radius: 50%;
+  left: 37%;
+  padding-top: 3%;
+  width: 3%;
+}
+.phone .home-button {
+  border: 4px solid #353535;
+  border-radius: 50%;
+  left: 50%;
+  height: 8%;
+  padding: 0;
+  top: 93%;
+  width: 13%;
+}
+.phone .jack {
+  background: #1e1e1e;
+  border-radius: 2.5px;
+  height: 5px;
+  left: 50%;
+  top: 100%;
+  transform: translateX(-50%) translateY(9px);
+  width: 8%;
+}
+.phone .screen {
+  background: #f0efef;
+  border-color: #231f20;
+  bottom: 13%;
+  left: 3.5%;
+  overflow: hidden;
+  top: 11%;
+  width: 93%;
+}
+.phone .screen .quote-wrap {
+  display: flex;
+  flex-direction: column;
+  color: #b5afa8;
+  margin: 8% 0 0;
+  padding: 0;
+  position: relative;
+}
+.phone .screen blockquote {
+  font-size: 16px;
+  line-height: 32px;
+  margin: 0;
+  left: 13%;
+  overflow: hidden;
+  padding: 10% 0;
+  position: relative;
+  text-transform: uppercase;
+  width: 75%;
+}
+
+.phone .screen blockquote:before {
+  content: '“';
+}
+.phone .screen blockquote:after {
+  content: '”';
+}
+.phone .speaker {
+  background-color: #3a3536;
+  border-radius: 3.5px;
+  height: 2%;
+  left: 52%;
+  width: 18%;
+}
+.phone .bar-wrap {
+  background: #e6e4e4;
+  border-radius: 3vw;
+  display: block;
+  font-size: 4vw;
+  letter-spacing: 1px;
+  line-height: 5vw;
+  margin: 0;
+  overflow: hidden;
+  padding: 4px 3.5vw 2px;
+  position: relative;
+  width: 100%;
+}
+
+
+@media (min-width: 450px) and (max-width: 899px) {
+  .phone {
+    padding: 25px 25px 110px;
+    box-shadow: 0 10px 0 0 #3c70ad;
+  }
+
+  .phone .screen blockquote {
+    font-size: 32px;
+  }
+
+  .phone .bar-wrap {
+    border-radius: 13px;
+    font-size: 16px;
+    height: 27px;
+    line-height: 21px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+@media screen and (min-width: 900px) and (max-width: 1472px) {
+  .phone {
+    border-radius: 2vw;
+  }
+}

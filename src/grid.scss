@@ -1,0 +1,89 @@
+/* GRID MIXINS */
+.view-small {
+    display: block;
+    padding: 25px;
+    position: relative;
+    width: 100%; }
+    @media (min-width: 450px) and (max-width: 899px) {
+      .view-small {
+        margin-bottom: 35px;
+        padding: 0; } }
+    @media screen and (min-width: 900px) and (max-width: 1471.7272727273px) {
+      .view-small {
+        margin-bottom: 2.3765432099vw;
+        padding: 0 2.3765432099vw; } }
+    @media screen and (min-width: 1472.7272727273px) {
+      .view-small {
+        margin-bottom: 35px;
+        padding: 0 35px; } }
+    @media (min-width: 900px) {
+      .view-small {
+        clear: none;
+        display: table-cell;
+        float: none; } }
+  
+  @media (min-width: 450px) {
+    .view-small {
+      clear: none; } }
+  @media (min-width: 450px) and (max-width: 899px) {
+    .view-small {
+      width: 100%; } }
+  @media (min-width: 900px) {
+    .view-small {
+      width: 33.3333333333%; } }
+  
+  .row {
+    margin-top: 20px;
+    display: block;
+    width: 100%; }
+    .row:after, .row:before {
+      content: '';
+      display: table; }
+    @media (min-width: 900px) {
+      .row {
+        display: table;
+      } 
+    }
+  
+  
+  
+  
+  .container {
+    margin: 0 auto 7.7777777778vw;
+    max-width: 1350px;
+    padding: 0;
+    width: 100%; 
+  }
+    @media (min-width: 450px) and (max-width: 899px) {
+      .container {
+        margin-bottom: 35px;
+        max-width: 450px;
+        padding: 0 37.5px; } 
+    }
+  
+  .input {
+    background: transparent;
+    border-width: 0px;
+    box-sizing: border-box;
+    display: block;
+    font-family: "courier-prime", Courier, sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    max-width: 100%;
+    outline: none;
+    text-align: center;
+  }
+  
+    @media (min-width: 1350px) {
+      .input {
+        width: 400px; 
+      } 
+    }
+  
+  
+  @media (max-width: 449px) {
+    .view-grid {
+      margin-bottom: 7.7777777778vw; } }
+  @media (min-width: 450px) and (max-width: 899px) {
+    .view-grid {
+      margin-right: 3.8888888889vw; } }

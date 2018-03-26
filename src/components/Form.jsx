@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 
 import { getCombinations } from '../api/t9-api';
+import './Form.scss';
+import '../grid.scss';
 
 export class Form extends Component {
   constructor(props) {
@@ -17,31 +19,52 @@ export class Form extends Component {
   }
 
   handleSubmit(event) {
-    event.preventDefault()
-    console.log('sending from form', this.state.inputValue)
+    event.preventDefault();
     getCombinations(this.state.inputValue).then(result => {
       this.setState({ data: result, loading: true });
-      console.log(this.state.data)   
     });
   }
 
   handleChange(event) {
-    this.setState({inputValue: event.target.value});
+    this.setState({ inputValue: event.target.value });
   }
 
   render() {
     const { data } = this.state;
     return (
       <div>
-        <form onSubmit={this.handleSubmit}>
-          <input
-            className="number_input"
-            type="number"
-            onChange={(value) => this.handleChange(value)}
-          />
-          <input type="submit" className="submit_button" />
-        </form>
-        <div>Here the data will appear {data}</div>
+        <div className="container">
+          <div className="row">
+            <div className="view-small view-grid">
+              <div className="phone">
+                <div className="camera"></div>
+                <div className="speaker"></div>
+                <div className="buttons"></div>
+                <div className="screen">
+                  <div className="bar">
+                    <div className="bar-wrap">
+                      <form onSubmit={this.handleSubmit}>
+                        <input
+                          className="input no-spinners"
+                          type="number"
+                          onChange={value => this.handleChange(value)}
+                          pattern="[0-9]*"
+                        />
+                      </form>
+                    </div>
+                  </div>
+                  <div className="quote-wrap">
+                    <blockquote>
+                      Write something, yo?
+                    </blockquote>
+                    <blockquote>{data}</blockquote>
+                  </div>
+                </div>
+                <div className="home-button" />
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
