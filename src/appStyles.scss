@@ -55,7 +55,8 @@ a {
 }
 
 .App-title {
-  font-size: 1.5em;
+  font-size: 4.5em;
+  text-transform: uppercase;  
 }
 
 .App-intro {
@@ -73,5 +74,10 @@ a {
   margin: 0;
 }
 
+@media (min-width: 310px) and (max-width: 350px) {
+  .App-title {
+    font-size: 3.5em;
+  }
+}
 
 

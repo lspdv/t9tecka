@@ -7,8 +7,8 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">T9tečka</h1>
-          <p className="App-title">everybody knows it, everybody wants forget it!</p>          
+          <h2 className="App-title">T9tečka</h2>
+          {/* <p className="App-title">everybody knows it, everybody want forget it!</p>           */}
         </header>
         <Form />
       </div>

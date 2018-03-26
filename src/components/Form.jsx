@@ -14,8 +14,10 @@ export class Form extends Component {
       inputValue: ''
     };
 
-    this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    this.getMatchesFromConvertedNumbers = this.getMatchesFromConvertedNumbers.bind(this);
+    
   }
 
   handleSubmit(event) {
@@ -29,8 +31,18 @@ export class Form extends Component {
     this.setState({ inputValue: event.target.value });
   }
 
+  getMatchesFromConvertedNumbers(data) {
+    try {
+      const item = data[0].map((item, idx) => <span key={idx} style={{padding: '0 5px'}}>{item}</span>)
+      return item;
+    } catch (error) {
+        console.log('Error in getting pairs of letters.', error)
+    }
+  }
+
   render() {
     const { data } = this.state;
+    console.log(data, 'dafuck')
     return (
       <div>
         <div className="container">
@@ -55,12 +67,14 @@ export class Form extends Component {
                   </div>
                   <div className="quote-wrap">
                     <blockquote>
-                      Write something, yo?
+                      Write some numbers, yo?
                     </blockquote>
-                    <blockquote>{data}</blockquote>
+                    <blockquote>{(data) ? this.getMatchesFromConvertedNumbers(data) : "I will show you their matches."}</blockquote>                                       
                   </div>
                 </div>
-                <div className="home-button" />
+                <a title="Go to Github to see the source code." href="https://github.com/lspdv/t9tecka">
+                  <div className="home-button home-button-easter-egg"></div>
+                </a>
               </div>
             </div>
           </div>
