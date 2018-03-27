@@ -9,7 +9,7 @@ In the project directory, you can run:
 ### `yarn start-server`
 
 Runs the express server to reach endpoint for /t9tka.<br>
-Frontend part will fetch data from http://localhost:5000/api/t9tka
+Frontend part will fetch data from /t9tka endpoint
 
 ### `yarn start`
 

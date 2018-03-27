@@ -1,9 +1,7 @@
-const baseUrl = process.env.API_URL || 'http://localhost:5000/api';
-
 export const getCombinations = numbers => {
   return new Promise((resolve, reject) => {
       try {
-          fetch(`${baseUrl}/t9ka`, {
+          fetch(`/api/t9ka`, {
               method: 'POST',
               cache: 'no-cache',
               mode: 'cors',

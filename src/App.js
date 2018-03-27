@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './appStyles.scss';
-import { Form } from './components/Form'
+import { Device } from './components/Device'
 
 class App extends Component {
   render() {
@@ -8,9 +8,8 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <h2 className="App-title">T9tečka</h2>
-          {/* <p className="App-title">everybody knows it, everybody want forget it!</p>           */}
         </header>
-        <Form />
+        <Device />
       </div>
     );
   }
