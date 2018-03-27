@@ -2,16 +2,11 @@ import * as React from 'react';
 
 import './Spinner.scss';
 
-export const Spinner = props => {
-  const { handleCanceledRequest } = props;
-  return (
+export const Spinner = () => (
     <div className="box">
       <div className="loader" />
-      <span>
-        Finding all combinations, if you filled more than 5 digis might take
-        long time. Results will be scrollable.
+      <span className="loading-info">
+        Might take a time. Long results will be scrollable. SCROLL!
       </span>
-      <button onClick={handleCanceledRequest}>Stop Matching</button>
     </div>
-  );
-};
+);

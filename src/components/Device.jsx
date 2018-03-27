@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { getCombinations, abortFetching } from '../api/t9-api';
+import { getCombinations } from '../api/t9-api';
 import { Spinner } from './Spinner'
 
 import './Device.scss';
@@ -14,13 +14,11 @@ export class Device extends Component {
       loading: false,
       data: null,
       inputValue: '',
-      abortedRequest: false
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
-    this.getMatchesFromConvertedNumbers = this.getMatchesFromConvertedNumbers.bind(this);
-    this.handleCanceledRequest = this.handleCanceledRequest.bind(this);          
+    this.getMatchesFromConvertedNumbers = this.getMatchesFromConvertedNumbers.bind(this);   
   }
 
   handleSubmit(event) {
@@ -29,23 +27,12 @@ export class Device extends Component {
     this.setState({ loading: true });
 
     getCombinations(inputValue).then(result => {
-      this.setState({ data: result, loading: false });  
+      this.setState({ data: result, loading: false });    
     });
   }
 
   handleChange(event) {
     this.setState({ inputValue: event.target.value });
-  }
-
-  handleCanceledRequest(event) {
-    event.preventDefault();
-    this.setState({ loading: true });
-    try {
-      abortFetching()
-      this.setState({ loading: false }); 
-    } catch (error) {
-        console.log('Error in aborting your request.', error)
-    }
   }
 
   getMatchesFromConvertedNumbers(data) {
@@ -59,6 +46,7 @@ export class Device extends Component {
 
   render() {
     const { data, loading } = this.state;
+    console.log(data); 
     return (
       <div>
         <div className="container">
@@ -73,10 +61,13 @@ export class Device extends Component {
                     <div className="bar-wrap">
                       <form onSubmit={this.handleSubmit}>
                         <input
+                          type="text"
                           className="input no-spinners"
-                          type="number"
                           onChange={value => this.handleChange(value)}
-                          pattern="[0-9]*"
+                          pattern="[-+]?[0-9]?[0-9]+" //regex to get only numbers
+                          maxLength="7"
+                          title="Add max 7 numbers from 0 to 9."
+                          placeholder="Convert..."
                         />
                       </form>
                     </div>
@@ -90,12 +81,12 @@ export class Device extends Component {
                       <div className="enter-wrap"></div>
                     </a>
                   </div>
-                  {loading && <Spinner handleCanceledRequest={this.handleCanceledRequest}/>}
+                  {loading && <Spinner />}
                   <div className="quote-wrap">
                     <blockquote>
-                      Write some numbers, yo?
+                      This is T9 convertor! Write some numbers, yo?!
                     </blockquote>
-                    <blockquote>{(data && data[0]) ? this.getMatchesFromConvertedNumbers(data) : "I will show you their matches here."}</blockquote>                                       
+                    <blockquote>{(data && data.convertedNumbers[0]) ? this.getMatchesFromConvertedNumbers(data.convertedNumbers) : "I will show you matches here."}</blockquote>                                       
                   </div>
                 </div>
                 <a title="Go to Github to see the source code." href="https://github.com/lspdv/t9tecka" target="_blank" rel="noopener noreferrer">
