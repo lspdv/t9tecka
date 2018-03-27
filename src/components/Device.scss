@@ -123,7 +123,7 @@
   margin: 0;
   left: 13%;
   overflow: hidden;
-  padding: 10% 0;
+  padding: 6% 0;
   position: relative;
   text-transform: uppercase;
   width: 75%;
@@ -144,6 +144,7 @@
   width: 18%;
 }
 .phone .bar-wrap {
+  cursor: pointer;
   background: #e6e4e4;
   border-radius: 3vw;
   display: block;

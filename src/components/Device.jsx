@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 
-import { getCombinations } from '../api/t9-api';
+import { getCombinations, abortFetching } from '../api/t9-api';
+import { Spinner } from './Spinner'
+
 import './Device.scss';
 import '../grid.scss';
 
@@ -11,25 +13,39 @@ export class Device extends Component {
     this.state = {
       loading: false,
       data: null,
-      inputValue: ''
+      inputValue: '',
+      abortedRequest: false
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
-    this.getMatchesFromConvertedNumbers = this.getMatchesFromConvertedNumbers.bind(this);   
+    this.getMatchesFromConvertedNumbers = this.getMatchesFromConvertedNumbers.bind(this);
+    this.handleCanceledRequest = this.handleCanceledRequest.bind(this);          
   }
 
   handleSubmit(event) {
+    const { inputValue } = this.state;    
     event.preventDefault();
     this.setState({ loading: true });
 
-    getCombinations(this.state.inputValue).then(result => {
+    getCombinations(inputValue).then(result => {
       this.setState({ data: result, loading: false });  
     });
   }
 
   handleChange(event) {
     this.setState({ inputValue: event.target.value });
+  }
+
+  handleCanceledRequest(event) {
+    event.preventDefault();
+    this.setState({ loading: true });
+    try {
+      abortFetching()
+      this.setState({ loading: false }); 
+    } catch (error) {
+        console.log('Error in aborting your request.', error)
+    }
   }
 
   getMatchesFromConvertedNumbers(data) {
@@ -42,7 +58,7 @@ export class Device extends Component {
   }
 
   render() {
-    const { data } = this.state;
+    const { data, loading } = this.state;
     return (
       <div>
         <div className="container">
@@ -55,7 +71,7 @@ export class Device extends Component {
                 <div className="screen">
                   <div className="bar">
                     <div className="bar-wrap">
-                      <form>
+                      <form onSubmit={this.handleSubmit}>
                         <input
                           className="input no-spinners"
                           type="number"
@@ -64,15 +80,22 @@ export class Device extends Component {
                         />
                       </form>
                     </div>
-                    <a title="Go to Github to see the source code." target="_blank" rel="noopener noreferrer" onClick={this.handleSubmit} className="enter-link">
+                    <a 
+                      title="Go to Github to see the source code." 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      onClick={this.handleSubmit} 
+                      className="enter-link"
+                    >
                       <div className="enter-wrap"></div>
                     </a>
                   </div>
+                  {loading && <Spinner handleCanceledRequest={this.handleCanceledRequest}/>}
                   <div className="quote-wrap">
                     <blockquote>
                       Write some numbers, yo?
                     </blockquote>
-                    <blockquote>{(data && data[0]) ? this.getMatchesFromConvertedNumbers(data) : "I will show you their matches."}</blockquote>                                       
+                    <blockquote>{(data && data[0]) ? this.getMatchesFromConvertedNumbers(data) : "I will show you their matches here."}</blockquote>                                       
                   </div>
                 </div>
                 <a title="Go to Github to see the source code." href="https://github.com/lspdv/t9tecka" target="_blank" rel="noopener noreferrer">
