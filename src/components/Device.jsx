@@ -71,19 +71,6 @@ export class Device extends Component {
                   />
                 </div>
                 <ScreenContent loading={loading} data={data} getMatchesFromConvertedNumbers={this.getMatchesFromConvertedNumbers}/>
-                {/* {loading && <Spinner />}
-                <div className="quote-wrap">
-                  <blockquote>
-                    This is T9 convertor! Write some numbers, yo?!
-                  </blockquote>
-                  <blockquote>
-                    {data && data.convertedNumbers[0]
-                      ? this.getMatchesFromConvertedNumbers(
-                          data.convertedNumbers
-                        )
-                      : 'I will show you matches here.'}
-                  </blockquote>
-                </div> */}
               </div>
               <GithubEasterEggLink />
             </div>
