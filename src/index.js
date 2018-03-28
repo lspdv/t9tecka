@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import 'abortcontroller-polyfill';
 
 import App from './App';
 
