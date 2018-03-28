@@ -181,6 +181,11 @@
   display: flex;
 }
 
+@media (max-width: 450px) {
+  .phone .screen blockquote {
+    font-size: 10px;
+  }
+}
 
 @media (min-width: 450px) and (max-width: 899px) {
   .phone {
@@ -190,7 +195,7 @@
   }
 
   .phone .screen blockquote {
-    font-size: 32px;
+    font-size: 12px;
   }
 
   .phone .bar-wrap {
@@ -206,5 +211,8 @@
 @media screen and (min-width: 900px) {
   .phone {
     border-radius: 2vw;
+  }
+  .phone .screen blockquote {
+    font-size: 14px;
   }
 }

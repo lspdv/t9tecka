@@ -1,22 +1,23 @@
-This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
+This project was bootstrapped with ejected [Create React App](https://github.com/facebookincubator/create-react-app).
 
-This project contains T9 convertor as we all (or the older of us) know very well and compares choosen digits with words in english dictionary. Dictionary contains just limited number of words. 
+Project is T9 convertor - the ugly annoying phone kayboards feature we all (or the older of us) know very well. It compares choosen digits (converted to letters) with words in english dictionary. Dictionary contains just limited number of words. 
 
-For server I use express and part of the script contains the function for matching pairs of letters (which we could call similar to Cartesian Product mathematic operation). Those matches will be compared with the dictionary...hopefully...somehow....anyway, this README is TBD soon.
+Express server creates endpoint and endpoint offers results returned by functions for:
+1. converting digits to letters
+2. comparing converted results with dictionary (based on Cartesian Product mathematic operation).
 
 In the project directory, you can run:
 
-### `yarn start-server`
+### `yarn start-dev`
 
-Runs the express server to reach endpoint for /t9tka.<br>
-Frontend part will fetch data from /t9tka endpoint
+Runs scripts needed for running frontend and API endpoint on one port.<br>
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
 
 ### `yarn start`
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-Page is hot-reloading if changes.
+Contains scripts for frontend and backend. For deployment I am using Now.sh and it defaultly uses `yarn start`<br>
+I recommend not using this command for development mode.
 
 ### `yarn test`
 
@@ -30,3 +31,11 @@ It correctly bundles React in production mode and optimizes the build for the be
 
 The build is minified and the filenames include the hashes.<br>
 The app will be ready to be deployed!
+
+
+## Deployement
+
+Demo of this app is deployed and can be re-deployed by Now.sh very easily.
+In command line install `yarn now`
+and use `now` command.
+Or by drag&drop in Now desktop app.
