@@ -77,7 +77,7 @@
 
 .phone .home-button {
   border: 4px solid #353535;
-  background: #3a3b3b;  
+  background: #3a3b3b;
   border-radius: 50%;
   left: 50%;
   height: 8%;
@@ -176,11 +176,17 @@
   size: 10px;
 }
 
+.input-container {
+  width: 100%;
+  display: flex;
+}
+
 
 @media (min-width: 450px) and (max-width: 899px) {
   .phone {
     padding: 25px 25px 110px;
     box-shadow: 0 10px 0 0 #3c70ad;
+    border-radius: 4.4vw
   }
 
   .phone .screen blockquote {
