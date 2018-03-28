@@ -1,2 +1,9 @@
 [ignore]
 .*/node_modules/*
+*.scss
+
+[options]
+module.name_mapper='.*(.scss)' -> '{}'
+
+[libs]
+flow-typed

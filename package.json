@@ -95,7 +95,8 @@
       "json",
       "web.jsx",
       "jsx",
-      "node"
+      "node",
+      "scss"
     ]
   },
   "babel": {
