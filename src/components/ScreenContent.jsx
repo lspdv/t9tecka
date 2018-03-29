@@ -22,7 +22,7 @@ export const ScreenContent = ({ loading, data, getMatchesFromConvertedNumbers }:
       <blockquote>
         {data && data.convertedNumbers
           ? getMatchesFromConvertedNumbers(data.convertedNumbers)
-          : 'I will show you matches here.'}
+          : 'I will show you matches and all combinations here.'}
       </blockquote>
     </div>
   </div>

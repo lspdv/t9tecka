@@ -35,7 +35,7 @@ export class Device extends Component {
       .then(result => {
         this.setState({ data: result.data, loading: false, status: result.status });
 
-        if (!status) {
+        if (status === false) {
           throw new Error('Endpoint unavailable.');
         }
       })

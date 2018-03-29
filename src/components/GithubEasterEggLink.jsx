@@ -4,11 +4,7 @@ import * as React from 'react';
 
 const githubLink = 'https://github.com/lspdv/t9tecka';
 
-type Props = {|
-  handleSubmit: () => void
-|};
-
-export const GithubEasterEggLink = ({ handleSubmit }: Props) => (
+export const GithubEasterEggLink = () => (
   <a
     title="Go to Github to see the source code."
     href={githubLink}

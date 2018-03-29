@@ -1,41 +1,46 @@
 This project was bootstrapped with ejected [Create React App](https://github.com/facebookincubator/create-react-app).
 
-Project is T9 convertor - the ugly annoying phone kayboards feature we all (or the older of us) know very well. It compares choosen digits (converted to letters) with words in english dictionary. Dictionary contains just limited number of words. 
+Project is T9 convertor - the ugly annoying vintage phone keyboards feature we know very well. You can input up to 7 digits and function on backend will convert them to all possible letter combinations. After that another function compares results with words in English dictionary. Dictionary contains just limited number of words, about 10 000 and some of them are pretty strange.
+
+What it has and it is nice:
+1. Easteregg - hidden Github redirect.
+2. The iPhone UI is pure CSS no pictures!
+3. My fuckups are clearly visible in commits - I dont even try to hide them.
+4. Searching for words in dictionary - try put some meaningful digits like: 8378464 or 228
+4. It so awesome that it is responsive - I cant believe my eyes, you can use iPhone, iPad, Big TV screen, projector - like aaaaw yeah! I dont recommend ising IE because I decided to basically not support it or test it. Chrome is the choice!
+
+![picture](public/img_iPhone.png) ![picture](public/img_desktop.png) ![picture](public/img_projector.jpg)
 
 Express server creates endpoint and endpoint offers results returned by functions for:
 1. converting digits to letters
-2. comparing converted results with dictionary (based on Cartesian Product mathematic operation).
+2. comparing converted results with dictionary (based on Cartesian Product mathematic operation or I hope so because I hapilly got inspired from discussions on StackOverFlow).
 
-In the project directory, you can run:
+In the project directory, you can run (some of us rather walk):
 
 ### `yarn start-dev`
 
-Runs scripts needed for running frontend and API endpoint on one port.<br>
+Runs scripts needed for running frontend and API endpoint on one port for development.<br>
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
 
 ### `yarn start`
 
-Contains scripts for frontend and backend. For deployment I am using Now.sh and it defaultly uses `yarn start`<br>
-I recommend not using this command for development mode.
+I use this commant during deploy. I am using Now.sh and it defaultly picks `yarn start`<br>
+I recommend not using this command for development mode. Or lets say it clearly. Dont use it, it wont work!
 
 ### `yarn test`
 
-Launches the test runner in the interactive watch mode.<br>
+Launch the test runner in the interactive watch mode.<br>
 See the section about [running tests](#running-tests) for more information.
 
 ### `yarn build`
 
-Builds the app for production to the `build` folder.<br>
+Builds the app to be production ready to the `build` folder.<br>
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
 The build is minified and the filenames include the hashes.<br>
-The app will be ready to be deployed!
-
 
 ## Deployement
 
 Demo of this app is deployed and can be re-deployed by Now.sh very easily.
-In command line install `yarn now`
-and use `now` command.
-Or by drag&drop in Now desktop app.
+In command line install `yarn -g now` and use `now` command.
+Or by drag&drop in Now.sh desktop app.
