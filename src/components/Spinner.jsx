@@ -6,7 +6,7 @@ export const Spinner = () => (
     <div className="box">
       <div className="loader" />
       <span className="loading-info">
-        Matching...
+        Matching...<br />time is money...or results!
       </span>
     </div>
 );

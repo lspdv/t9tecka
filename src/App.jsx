@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './appStyles.scss';
-import { Device } from './components/Device'
+import { Device } from './components/Device';
+import { ErrorWrapper } from './components/ErrorWrapper';
 
 class App extends Component {
   render() {
@@ -9,7 +10,9 @@ class App extends Component {
         <header className="App-header">
           <h2 className="App-title">T9tečka</h2>
         </header>
-        <Device />
+        <ErrorWrapper>
+          <Device />
+        </ErrorWrapper>
       </div>
     );
   }

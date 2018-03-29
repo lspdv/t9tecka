@@ -9,9 +9,9 @@ export const getCombinations = numbers => {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({ numbers }),
-      }).then(res => {
-        console.log(res);
-        res.json().then(jsonResult => resolve(jsonResult));
+      })
+      .then(res => {
+        res.json().then(jsonResult => resolve( { status: res.status, data: jsonResult }));
       }).catch((error => {
 		  console.log('Error during fetching results.', error);
       	reject(error);

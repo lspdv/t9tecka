@@ -15,22 +15,33 @@ export class Device extends Component {
     this.state = {
       loading: false,
       data: null,
-      inputValue: ''
+      inputValue: '',
+      status: true
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
-    this.getMatchesFromConvertedNumbers = this.getMatchesFromConvertedNumbers.bind(this);
+    this.getMatchesFromConvertedNumbers = this.getMatchesFromConvertedNumbers.bind(
+      this
+    );
   }
 
   handleSubmit(event) {
-    const { inputValue } = this.state;
+    const { inputValue, status } = this.state;
     event.preventDefault();
     this.setState({ loading: true });
 
-    getCombinations(inputValue).then(result => {
-      this.setState({ data: result, loading: false });
-    });
+    getCombinations(inputValue)
+      .then(result => {
+        this.setState({ data: result.data, loading: false, status: result.status });
+
+        if (!status) {
+          throw new Error('Endpoint unavailable.');
+        }
+      })
+      .catch(error => {
+        throw new Error('Error during fetching results.');
+      });
   }
 
   handleChange(event) {
@@ -46,7 +57,8 @@ export class Device extends Component {
       ));
       return item;
     } catch (error) {
-      console.log('Error in getting pairs of letters.', error);
+      throw new Error('Error in getting pairs of letters.');
+
     }
   }
 
@@ -57,7 +69,7 @@ export class Device extends Component {
         <div className="row">
           <div className="view-small view-grid">
             <div className="phone">
-              <div className="camera"></div>
+            <div className="camera"></div>
               <div className="speaker"></div>
               <div className="buttons"></div>
               <div className="screen">
@@ -67,7 +79,13 @@ export class Device extends Component {
                     handleChange={this.handleChange}
                   />
                 </div>
-                <ScreenContent loading={loading} data={data} getMatchesFromConvertedNumbers={this.getMatchesFromConvertedNumbers} />
+                <ScreenContent
+                  loading={loading}
+                  data={data}
+                  getMatchesFromConvertedNumbers={
+                    this.getMatchesFromConvertedNumbers
+                  }
+                />
               </div>
               <GithubEasterEggLink />
             </div>

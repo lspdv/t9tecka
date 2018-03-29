@@ -2,7 +2,7 @@
 
 import * as React from 'react';
 
-const githubLink = 'https://github.com/lspdv/t9tecka'
+const githubLink = 'https://github.com/lspdv/t9tecka';
 
 type Props = {|
   handleSubmit: () => void

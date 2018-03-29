@@ -64,6 +64,9 @@
     "pre-commit": "^1.2.2",
     "sass-loader": "^6.0.7"
   },
+  "engines": {
+    "node": "8.10.0"
+  },
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.{js,jsx,mjs}"

@@ -1,6 +1,12 @@
+//@flow
+
 import React from 'react';
 
 import './WordsList.scss';
+
+type Props = {|
+  data: Array<string>
+|}
 
 export const WordsList = ({ data }: Props) => (
   <div className="words-list-container">
@@ -8,7 +14,7 @@ export const WordsList = ({ data }: Props) => (
       Matching words:
       {data.map((item, idx) => (
         <span key={idx} style={{ padding: '0 5px' }}>
-        {item}
+          {item}
         </span>
       ))}
     </span>

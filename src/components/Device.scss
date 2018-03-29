@@ -87,7 +87,7 @@
 }
 
 .phone .home-button-easter-egg:hover {
-  background: #F2654B;
+  background: #f2654b;
 }
 
 .phone .jack {
@@ -113,13 +113,13 @@
   display: flex;
   flex-direction: column;
   color: #b5afa8;
-  margin: 8% 0 0;
+  margin: 0 0 0;
   padding: 0;
   position: relative;
 }
 .phone .screen blockquote {
   font-size: 16px;
-  line-height: 32px;
+  line-height: 35px;
   margin: 0;
   left: 13%;
   overflow: hidden;
@@ -169,7 +169,7 @@
 }
 
 .phone .enter-wrap:before {
-  content: "\2192";
+  content: '\2192';
   color: #444444;
   font-size: 30px;
   font-weight: 700;
@@ -184,6 +184,7 @@
 @media (max-width: 450px) {
   .phone .screen blockquote {
     font-size: 10px;
+    line-height: 23px;
   }
 }
 
@@ -191,11 +192,12 @@
   .phone {
     padding: 25px 25px 110px;
     box-shadow: 0 10px 0 0 #3c70ad;
-    border-radius: 4.4vw
+    border-radius: 4.4vw;
   }
 
   .phone .screen blockquote {
     font-size: 12px;
+    line-height: 28px;
   }
 
   .phone .bar-wrap {
