@@ -1,6 +1,3 @@
-A
-a
-aa
 aal
 aalii
 aam
@@ -13,7 +10,6 @@ Aaronical
 Aaronite
 Aaronitic
 Aaru
-Ab
 aba
 Ababdeh
 Ababua
@@ -99244,8 +99240,6 @@ iztle
 Izumi
 izzard
 Izzy
-J
-j
 Jaalin
 jab
 Jabarite

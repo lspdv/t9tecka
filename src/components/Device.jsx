@@ -20,9 +20,7 @@ export class Device extends Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
-    this.getMatchesFromConvertedNumbers = this.getMatchesFromConvertedNumbers.bind(
-      this
-    );
+    this.getMatchesFromConvertedNumbers = this.getMatchesFromConvertedNumbers.bind(this);
   }
 
   handleSubmit(event) {
@@ -54,7 +52,6 @@ export class Device extends Component {
 
   render() {
     const { data, loading } = this.state;
-    console.log(data);
     return (
       <div className="container">
         <div className="row">
@@ -70,7 +67,7 @@ export class Device extends Component {
                     handleChange={this.handleChange}
                   />
                 </div>
-                <ScreenContent loading={loading} data={data} getMatchesFromConvertedNumbers={this.getMatchesFromConvertedNumbers}/>
+                <ScreenContent loading={loading} data={data} getMatchesFromConvertedNumbers={this.getMatchesFromConvertedNumbers} />
               </div>
               <GithubEasterEggLink />
             </div>

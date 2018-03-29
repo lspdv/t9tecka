@@ -53,8 +53,8 @@ function convertNumbersToLetters(number) {
   return convertedNumbers;
 }
 
-  //function adding words to result based on convertedNumbers result from convertNumbersToLetters()
-  //example: input 6666 - would be [moon, noon]
+//function adding words to result based on convertedNumbers result from convertNumbersToLetters()
+//example: input 6666 - would be [moon, noon]
 function searchForWordsInDictionary(convertedNumbers) {
   const dictionary = [];
   const filePath = fs.readFileSync('./dictionary.txt', 'utf8').split('\n');
@@ -66,6 +66,11 @@ function searchForWordsInDictionary(convertedNumbers) {
       }
     });
   });
+
+  if (!dictionary[0]) {
+    const notMatchingResult = 'No matching words.'
+    dictionary.push(notMatchingResult)
+  }
   return dictionary;
 }
 
