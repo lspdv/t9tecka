@@ -74,4 +74,4 @@ function searchForWordsInDictionary(convertedNumbers) {
   return dictionary;
 }
 
-module.exports = {convertNumbersToLetters, searchForWordsInDictionary}
+module.exports = { convertNumbersToLetters, searchForWordsInDictionary }
