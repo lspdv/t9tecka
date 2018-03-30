@@ -13,7 +13,7 @@ export const getCombinations = numbers => {
       .then(res => {
         res.json().then(jsonResult => resolve( { status: res.status, data: jsonResult }));
       }).catch((error => {
-		  console.log('Error during fetching results.', error);//TODO V2 github:@reklosenetagovat - Figure out how to convince Error Boundary to work in event handlers
+		  console.log('Error during fetching results.', error); //TODO V2 github:@reklosenetagovat - Figure out how to convince Error Boundary to work in event handlers
       	reject(error);
 	  }));
   });

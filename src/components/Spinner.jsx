@@ -1,6 +1,8 @@
+//@flow
+
 import * as React from 'react';
 
-import './Spinner.scss';
+import './Spinner.scss'; //TODO V2 github:@reklosenetagovat manage to auto create types for scss files
 
 export const Spinner = () => (
     <div className="box">

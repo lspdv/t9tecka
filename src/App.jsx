@@ -1,5 +1,7 @@
+//@flow
+
 import React, { Component } from 'react';
-import './appStyles.scss';
+import './appStyles.scss'; //TODO V2 github:@reklosenetagovat manage to auto create types for scss files
 import { Device } from './components/Device';
 import { ErrorWrapper } from './components/ErrorWrapper';
 
