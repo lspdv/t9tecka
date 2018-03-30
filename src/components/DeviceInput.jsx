@@ -12,7 +12,7 @@ export const DeviceInput = ({ handleSubmit, handleChange }: Props) => (
     <div className="bar-wrap">
       <form onSubmit={handleSubmit}>
         <input
-          type="text"
+          type="tel"
           className="input no-spinners"
           onChange={value => handleChange(value)}
           pattern="[-+]?[0-9]?[0-9]+" //regex to get only numbers in input combined with maxLengh attribute
@@ -24,7 +24,7 @@ export const DeviceInput = ({ handleSubmit, handleChange }: Props) => (
       </form>
     </div>
     <a
-      title="Go to Github to see the source code."
+      title="Send up to 7 numbers"
       target="_blank"
       rel="noopener noreferrer"
       onClick={handleSubmit}

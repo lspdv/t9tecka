@@ -6,7 +6,7 @@ Project is T9 convertor - the ugly annoying vintage phone keyboards feature we a
 
 What is included in this special sale price:
 1. Easteregg - hidden Github link to source code. Find it!
-2. All iPhone UI is CSS! iPhone screen is scrollable!
+2. All iPhone UI is CSS! iPhone screen is scrollable! On iPhone and iPad (standart size) portraitscreen and landscape screens old T9 keyboard and arrow appears.
 3. User friendly error handling! w Error Boundary (unfortunatelly handlers not included (╯°□°）╯︵ ┻━┻ )
 3. My fuckups are clearly visible in commits - I dont even try to hide them. Because if I would try to do so I would fuckup even more.
 4. Searching for words in dictionary - try put some meaningful digits like: 8378464 or 228

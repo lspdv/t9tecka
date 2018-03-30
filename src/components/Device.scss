@@ -217,4 +217,13 @@
   .phone .screen blockquote {
     font-size: 14px;
   }
+  .phone .enter-link {
+   display: none;
+  }
+}
+
+@media (max-width: 1024px) and (min-height: 768px) {
+  .phone .enter-link {
+   display: inherit;
+  }
 }
