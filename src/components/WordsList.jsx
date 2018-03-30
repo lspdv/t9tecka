@@ -1,8 +1,8 @@
 //@flow
 
-import React from 'react';
+import * as React from 'react';
 
-import './WordsList.scss';
+import './WordsList.scss'; //TODO V2 github:@reklosenetagovat manage to auto create types for scss files
 
 type Props = {|
   data: Array<string>

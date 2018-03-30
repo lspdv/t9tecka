@@ -1,15 +1,18 @@
 This project was bootstrapped with ejected [Create React App](https://github.com/facebookincubator/create-react-app).
 
+DEMO: https://reklosenetagovat.now.sh/
+
 Project is T9 convertor - the ugly annoying vintage phone keyboards feature we know very well. You can input up to 7 digits and function on backend will convert them to all possible letter combinations. After that another function compares results with words in English dictionary. Dictionary contains just limited number of words, about 10 000 and some of them are pretty strange.
 
-What it has and it is nice:
+What is included in thi special sale price:
 1. Easteregg - hidden Github redirect.
 2. The iPhone UI is pure CSS no pictures!
+3. User friendly error handling! w Error Boundary (unfortunatelly handlers not included (╯°□°）╯︵ ┻━┻ )
 3. My fuckups are clearly visible in commits - I dont even try to hide them.
 4. Searching for words in dictionary - try put some meaningful digits like: 8378464 or 228
-4. It so awesome that it is responsive - I cant believe my eyes, you can use iPhone, iPad, Big TV screen, projector - like aaaaw yeah! I dont recommend ising IE because I decided to basically not support it or test it. Chrome is the choice!
+4. It so awesome that it is responsive - I cant believe my eyes, you can use iPhone, iPad, Big TV screen, projector - like aaaaw yeah! I dont recommend ising IE because I decided to basically not support it or TRY to test it. Chrome is the choice! God save the Chrome!
 
-![picture](public/img_iPhone.png) ![picture](public/img_desktop.png) ![picture](public/img_projector.jpg)
+![picture](public/img_phone.png) ![picture](public/img_projector.jpg) ![picture](public/img_desktop.png)
 
 Express server creates endpoint and endpoint offers results returned by functions for:
 1. converting digits to letters
