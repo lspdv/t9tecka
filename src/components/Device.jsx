@@ -18,15 +18,9 @@ export class Device extends Component {
       inputValue: '',
       status: true
     };
-
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleChange = this.handleChange.bind(this);
-    this.getMatchesFromConvertedNumbers = this.getMatchesFromConvertedNumbers.bind(
-      this
-    );
   }
 
-  handleSubmit(event) {
+  handleSubmit = (event) => {
     const { inputValue, status } = this.state;
     event.preventDefault();
     this.setState({ loading: true });
@@ -44,11 +38,11 @@ export class Device extends Component {
       });
   }
 
-  handleChange(event) {
+  handleChange = (event) => {
     this.setState({ inputValue: event.target.value });
   }
 
-  getMatchesFromConvertedNumbers(data) {
+  getMatchesFromConvertedNumbers = (data) => {
     try {
       const item = data[0].map((item, idx) => (
         <span key={idx} style={{ padding: '0 5px' }}>
